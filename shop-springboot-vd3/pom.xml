@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
@@ -11,9 +11,9 @@
         <relativePath />
     </parent>
     <groupId>vn.tqduy</groupId>
-    <artifactId>shop-springboot-4-1-1</artifactId>
+    <artifactId>shop-springboot-vd3</artifactId>
     <version>1.0.0</version>
-    <name>shop-springboot-4-1-1</name>
+    <name>shop-springboot-vd3</name>
     <description>Ví dụ 3: Hệ thống Full Shop: Auth OTP qua Mail, Session, CRUD User, CRUD Product + Cloudinary</description>
 
     <properties>

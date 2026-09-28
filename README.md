@@ -1,4 +1,4 @@
-﻿# BÀI TẬP 9: TÌM HIỂU VÀ THỰC HÀNH SPRING SECURITY 7 + SPRING BOOT + MAPSTRUCT + THYMELEAF + SQL SERVER
+# BÀI TẬP 9: TÌM HIỂU VÀ THỰC HÀNH SPRING SECURITY 7 + SPRING BOOT + MAPSTRUCT + THYMELEAF + SQL SERVER
 
 - **Môn học:** Lập trình Web (WEBPR330479)
 - **Giảng viên hướng dẫn:** ThS. Nguyễn Hữu Trung
@@ -14,7 +14,7 @@
 3. [Chi tiết các bài thực hành](#3-chi-tiết-các-bài-thực-hành)
    - [Ví dụ 1: springboot-security-vd1 (Login cơ bản + Layout thuần)](#ví-dụ-1-springboot-security-vd1)
    - [Ví dụ 2: springboot-security-vd2 (Custom Login Username/Email + Avatar + Dialect)](#ví-dụ-2-springboot-security-vd2)
-   - [Ví dụ 3: shop-springboot-4-1-1 (Hệ thống Shop Full Chức Năng)](#ví-dụ-3-shop-springboot-4-1-1)
+   - [Ví dụ 3: shop-springboot-vd3 (Hệ thống Shop Full Chức Năng)](#ví-dụ-3-shop-springboot-vd3)
 4. [Hướng dẫn Cài đặt & Khởi chạy](#4-hướng-dẫn-cài-đặt--khởi-chạy)
 5. [Hướng dẫn Upload lên GitHub và Nộp bài UTEx LMS](#5-hướng-dẫn-upload-lên-github-và-nộp-bài-utex-lms)
 
@@ -75,7 +75,7 @@ C:\BT9_VD1,2,3
 │           ├───static/images/            (user.png, admin.png, avatar-default.png)
 │           └───templates/                (Sử dụng Thymeleaf Layout Dialect)
 │
-└───shop-springboot-4-1-1                 (Ví dụ 3: Port 8080 - DB: webst3)
+└───shop-springboot-vd3                 (Ví dụ 3: Port 8080 - DB: webst3)
     │   pom.xml
     │   .env                              (Biến môi trường DB, Mail SMTP, Cloudinary)
     └───src/main/
@@ -131,7 +131,7 @@ C:\BT9_VD1,2,3
 
 ---
 
-### VÍ DỤ 3: `shop-springboot-4-1-1`
+### VÍ DỤ 3: `shop-springboot-vd3`
 - **Mục tiêu:** Hệ thống quản lý Shop bán hàng hoàn chỉnh với kiến trúc phân tầng chuyên nghiệp:
   1. **Authentication:**
      - **Đăng ký (Register):** Nhập username, email, họ tên, password -> Gửi mã OTP 6 số bảo mật qua Gmail SMTP -> Chuyển đến trang xác nhận OTP -> Kích hoạt tài khoản (`enabled = true`).
@@ -198,7 +198,7 @@ Tất cả 3 modules sẽ được build thành công:
 [INFO] Reactor Summary:
 [INFO] springboot-security-vd1 1.0 ........................ SUCCESS
 [INFO] springboot-security-vd2 1.0 ........................ SUCCESS
-[INFO] shop-springboot-4-1-1 1.0.0 ........................ SUCCESS
+[INFO] shop-springboot-vd3 1.0.0 ........................ SUCCESS
 [INFO] BT9 - Spring Boot Security Demos (VD1, VD2, VD3) ... SUCCESS
 ```
 
@@ -218,7 +218,7 @@ Tất cả 3 modules sẽ được build thành công:
 
 - **Chạy Ví dụ 3:**
   ```bash
-  .\mvnw.cmd spring-boot:run -pl shop-springboot-4-1-1
+  .\mvnw.cmd spring-boot:run -pl shop-springboot-vd3
   ```
   Truy cập: `http://localhost:8080`
 
