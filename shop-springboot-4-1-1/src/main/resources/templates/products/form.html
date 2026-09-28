@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layouts/layout :: head(${mode == 'create' ? 'Thêm Product' : 'Sửa Product'})}"></head>
+<body>
+<div th:replace="~{layouts/layout :: page(~{::main})}">
+<main>
+    <div class="form-card">
+        <h1 th:text="${mode == 'create' ? 'Thêm Sản phẩm mới' : 'Cập nhật Sản phẩm'}"></h1>
+
+        <form th:object="${productDTO}"
+              th:with="actionUrl=${mode == 'create' ? '/products/create' : '/products/edit/' + productDTO.id}"
+              th:action="${actionUrl}"
+              method="post"
+              enctype="multipart/form-data"
+              accept-charset="UTF-8">
+
+            <!-- ID -->
+            <input type="hidden" th:field="*{id}">
+
+            <!-- Tên sản phẩm -->
+            <div>
+                <label for="name">Tên sản phẩm</label>
+                <input id="name" type="text" th:field="*{name}" placeholder="Nhập tên sản phẩm...">
+                <small class="error-text" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></small>
+            </div>
+
+            <!-- Mô tả -->
+            <div>
+                <label for="description">Mô tả chi tiết</label>
+                <textarea id="description" th:field="*{description}" rows="4" placeholder="Nhập mô tả sản phẩm..."></textarea>
+            </div>
+
+            <!-- Giá -->
+            <div>
+                <label for="price">Giá bán (VNĐ)</label>
+                <input id="price" type="number" step="0.01" th:field="*{price}" placeholder="Nhập đơn giá...">
+                <small class="error-text" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></small>
+            </div>
+
+            <!-- Ảnh -->
+            <div style="margin: 15px 0;">
+                <label for="image">Tải lên ảnh sản phẩm (Cloudinary)</label>
+                <input id="image" type="file" name="image" accept="image/*">
+            </div>
+
+            <!-- Preview ảnh hiện tại -->
+            <div th:if="${productDTO.imageUrl != null}" style="margin: 15px 0;">
+                <p style="font-size:13px; color:#64748b; margin-bottom:6px;">Ảnh hiện tại:</p>
+                <img th:src="${#strings.contains(productDTO.imageUrl, '|') ? #strings.substringBefore(productDTO.imageUrl, '|') : productDTO.imageUrl}"
+                     class="preview" alt="Preview Image">
+            </div>
+
+            <!-- Button -->
+            <div style="margin-top: 20px;">
+                <button type="submit" class="button">Lưu sản phẩm</button>
+                <a class="button secondary" th:href="@{/products}" style="margin-left: 10px;">Hủy</a>
+            </div>
+        </form>
+    </div>
+</main>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+<head>
+    <title>Trang chủ</title>
+</head>
+<body>
+<main layout:fragment="content" class="container">
+    <div class="panel">
+        <h1 style="color: #1e3a8a; margin-top:0;">Trang chủ UTEShop</h1>
+        <p style="font-size: 16px; color: #475569;">
+            Ví dụ 2: Custom Login hỗ trợ đăng nhập bằng cả <b>Username</b> hoặc <b>Email</b>, hiển thị avatar và họ tên đầy đủ ở header.
+        </p>
+
+        <div th:if="${#authorization.expression('isAuthenticated()')}" style="margin-top: 25px; padding: 20px; background: #eff6ff; border-radius: 12px; border: 1px solid #bfdbfe;">
+            <div style="display:flex; align-items:center; gap:20px;">
+                <img th:src="${#authentication.principal.images != null and !#strings.isEmpty(#authentication.principal.images) ? #authentication.principal.images : '/images/avatar-default.png'}"
+                     alt="Avatar"
+                     width="80"
+                     height="80"
+                     style="border-radius:50%; object-fit:cover; border:3px solid #3b82f6;">
+                <div>
+                    <h2 style="margin:0 0 6px 0; color:#1e40af;">
+                        Xin chào, <span th:text="${#authentication.principal.fullName}">User</span>!
+                    </h2>
+                    <p style="margin: 4px 0; color:#334155;">
+                        • Tên đăng nhập: <strong th:text="${#authentication.principal.username}"></strong><br>
+                        • Email: <strong th:text="${#authentication.principal.email}"></strong><br>
+                        • Quyền: <span class="badge" th:text="${#authentication.principal.role}" style="background:#2563eb; color:white; padding:3px 8px; border-radius:4px; font-size:12px;"></span>
+                    </p>
+                </div>
+            </div>
+
+            <div th:if="${#authorization.expression('hasRole(''ADMIN'')')}" style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed #93c5fd;">
+                <span style="color:#1e3a8a; font-weight:600;">Bạn đang đăng nhập với quyền Quản trị viên (ADMIN):</span>
+                <a th:href="@{/admin}" class="btn primary small" style="margin-left:12px;">Truy cập trang Quản trị</a>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

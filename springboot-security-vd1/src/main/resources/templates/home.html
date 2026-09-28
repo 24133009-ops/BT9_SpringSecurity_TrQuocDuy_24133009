@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="~{layouts/layout :: head('Trang chủ')}"></head>
+<body>
+<header th:replace="~{fragments/header :: header}"></header>
+
+<main class="container">
+    <div class="panel">
+        <h1>Trang chủ IOTSTAR SHOP (Ví dụ 1)</h1>
+        <p style="font-size: 16px; color: #475569;">
+            Demo chức năng Đăng nhập bằng Spring Security 7 + Spring Boot 4 + MapStruct + Thymeleaf (Layout không dùng Dialect).
+        </p>
+
+        <div sec:authorize="isAuthenticated()" style="margin-top: 20px; padding: 16px; background: #ecfdf5; border-radius: 8px; border: 1px solid #a7f3d0;">
+            <h3 style="color:#065f46; margin-top:0;">Thông tin người dùng hiện tại:</h3>
+            <p>Email: <b sec:authentication="name">user</b></p>
+            <p>Quyền hạn (Authorities): <span sec:authentication="principal.authorities" style="color:#047857; font-weight:600;"></span></p>
+            <div sec:authorize="hasRole('ADMIN')">
+                <a th:href="@{/dashboard}" class="btn primary" style="margin-top: 10px;">Vào Dashboard Admin</a>
+            </div>
+        </div>
+
+        <div sec:authorize="!isAuthenticated()" style="margin-top: 20px;">
+            <p>Bạn chưa đăng nhập. Vui lòng đăng nhập để xem thông tin phân quyền.</p>
+            <a th:href="@{/login}" class="btn primary">Đăng nhập ngay</a>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <p>Bài tập Lập trình Web - ThS. Nguyễn Hữu Trung - Sinh viên: Trương Quốc Duy (MSSV: 24133009)</p>
+</footer>
+</body>
+</html>

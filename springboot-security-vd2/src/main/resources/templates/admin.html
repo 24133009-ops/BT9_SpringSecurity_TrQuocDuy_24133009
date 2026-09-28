@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+<head>
+    <title>Khu vực Admin</title>
+</head>
+<body>
+<main layout:fragment="content" class="container">
+    <div class="panel">
+        <h1 style="color:#b91c1c; margin-top:0;">Trang quản trị (Admin Panel)</h1>
+        <p style="color:#475569;">Trang này được bảo vệ nghiêm ngặt bằng quy tắc <code>.requestMatchers("/admin/**").hasRole("ADMIN")</code>.</p>
+        
+        <div style="background:#fef2f2; border:1px solid #fecaca; border-radius:10px; padding:18px; margin-top:20px;">
+            <h3 style="color:#991b1b; margin-top:0;">Xác thực thành công với vai trò Quản trị viên</h3>
+            <p>Họ tên: <strong th:text="${#authentication.principal.fullName}"></strong></p>
+            <p>Email: <strong th:text="${#authentication.principal.email}"></strong></p>
+            <p>Quyền truy cập: <span style="background:#dc2626; color:white; padding:3px 8px; border-radius:4px; font-weight:600;" th:text="${#authentication.principal.role}"></span></p>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <a th:href="@{/}" class="btn secondary">Quay lại Trang chủ</a>
+        </div>
+    </div>
+</main>
+</body>
+</html>

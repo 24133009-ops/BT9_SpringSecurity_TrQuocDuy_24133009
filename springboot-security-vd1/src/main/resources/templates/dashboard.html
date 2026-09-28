@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="~{layouts/layout :: head('Admin Dashboard')}"></head>
+<body>
+<header th:replace="~{fragments/header :: header}"></header>
+
+<main class="container">
+    <div class="panel">
+        <h1 style="color: #1e3a8a;">Admin Dashboard (Trang quản trị)</h1>
+        <p style="color: #64748b;">Trang này chỉ dành cho người dùng có quyền <code>ROLE_ADMIN</code>.</p>
+        
+        <div class="cards" style="margin-top: 25px;">
+            <div class="card">
+                <b>Tổng số User trong hệ thống</b>
+                <strong th:text="${userCount}">0</strong>
+            </div>
+            <div class="card">
+                <b>Trạng thái bảo mật</b>
+                <strong style="color: #16a34a; font-size: 24px;">ACTIVE (Spring Security 7)</strong>
+            </div>
+        </div>
+
+        <div style="margin-top: 25px;">
+            <a th:href="@{/}" class="btn secondary">Quay lại Trang chủ</a>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <p>Bài tập Lập trình Web - ThS. Nguyễn Hữu Trung - Sinh viên: Trương Quốc Duy (MSSV: 24133009)</p>
+</footer>
+</body>
+</html>

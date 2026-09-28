@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>vn.iotstar</groupId>
+    <artifactId>BT9_VD1_2_3</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>BT9 - Spring Boot Security Demos (VD1, VD2, VD3)</name>
+    <description>Bài tập 9: Spring Security + MapStruct + Thymeleaf + SQL Server (Ví dụ 1, Ví dụ 2, Ví dụ 3)</description>
+
+    <modules>
+        <module>springboot-security-vd1</module>
+        <module>springboot-security-vd2</module>
+        <module>shop-springboot-4-1-1</module>
+    </modules>
+
+    <properties>
+        <java.version>17</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+</project>
