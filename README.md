@@ -1,4 +1,4 @@
-# BÀI TẬP 9: TÌM HIỂU VÀ THỰC HÀNH SPRING SECURITY 7 + SPRING BOOT + MAPSTRUCT + THYMELEAF + SQL SERVER
+﻿# BÀI TẬP 9: TÌM HIỂU VÀ THỰC HÀNH SPRING SECURITY 7 + SPRING BOOT + MAPSTRUCT + THYMELEAF + SQL SERVER
 
 - **Môn học:** Lập trình Web (WEBPR330479)
 - **Giảng viên hướng dẫn:** ThS. Nguyễn Hữu Trung
@@ -43,7 +43,7 @@ C:\BT9_VD1,2,3
 ├───springboot-security-vd1               (Ví dụ 1: Port 8088 - DB: webst4)
 │   │   pom.xml
 │   └───src/main/
-│       ├───java/vn/iotstar/
+│       ├───java/vn/tqduy/
 │       │   ├───config/                   (SecurityConfig, EncodingConfig, DataInitializer)
 │       │   ├───controller/               (AuthController, HomeController)
 │       │   ├───dto/                      (UserDTO, LoginDTO)
@@ -60,7 +60,7 @@ C:\BT9_VD1,2,3
 ├───springboot-security-vd2               (Ví dụ 2: Port 8081 - DB: webst9)
 │   │   pom.xml
 │   └───src/main/
-│       ├───java/vn/iotstar/
+│       ├───java/vn/tqduy/
 │       │   ├───config/                   (SecurityConfig, EncodingConfig, DataInitializer)
 │       │   ├───controller/               (AuthController, HomeController)
 │       │   ├───dto/                      (UserDTO, LoginDTO)
@@ -79,7 +79,7 @@ C:\BT9_VD1,2,3
     │   pom.xml
     │   .env                              (Biến môi trường DB, Mail SMTP, Cloudinary)
     └───src/main/
-        ├───java/vn/iotstar/
+        ├───java/vn/tqduy/
         │   ├───config/                   (SecurityConfig, CloudinaryConfig, EncodingConfig, DataInitializer)
         │   ├───controller/               (AuthController, UserController, ProductController, HomeController, ErrorController)
         │   ├───dto/                      (UserDTO, ProductDTO, RegisterDTO, LoginDTO, VerifyOtpDTO, ForgotPasswordDTO, ResetPasswordDTO)
