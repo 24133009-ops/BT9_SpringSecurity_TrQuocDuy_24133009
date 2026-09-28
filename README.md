@@ -16,7 +16,6 @@
    - [Ví dụ 2: springboot-security-vd2 (Custom Login Username/Email + Avatar + Dialect)](#ví-dụ-2-springboot-security-vd2)
    - [Ví dụ 3: shop-springboot-vd3 (Hệ thống Shop Full Chức Năng)](#ví-dụ-3-shop-springboot-vd3)
 4. [Hướng dẫn Cài đặt & Khởi chạy](#4-hướng-dẫn-cài-đặt--khởi-chạy)
-5. [Hướng dẫn Upload lên GitHub và Nộp bài UTEx LMS](#5-hướng-dẫn-upload-lên-github-và-nộp-bài-utex-lms)
 
 ---
 
